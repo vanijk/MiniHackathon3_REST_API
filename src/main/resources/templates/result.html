@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+    table{
+    width:80%;
+        text-align: left;
+    }
+    </style>
+</head>
+<body>
+<!--Movie name is <p th:text="${movie.getTitle()}"></p>
+Movie rating is <p th:text="${movie.getRated()}"></p>-->
+<div>
+    <img th:src="@{'data:image/jpeg;base64,'+${movie.generateBase64Image()}}" alt="profile" class="...">
+
+    <!-- <img src="https://m.media-amazon.com/images/M/MV5BNjU3N2QxNzYtMjk1NC00MTc4LTk1NTQtMmUxNTljM2I0NDA5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg"  alt="" width="500" height="600">
+      -->
+    <h1 th:text="${movie.getTitle()}"> </h1>
+    <table>
+        <th >
+            Rating
+        </th>
+        <th>
+            Runtime
+        </th>
+        <th>
+            Release Date
+        </th>
+        <th>
+            Genere
+        </th>
+        <th>
+            Language
+        </th>
+        <tr>
+            <td th:text="${movie.getRated()}">
+
+            </td>
+            <td th:text="${movie.getRuntime()}">
+
+            </td>
+            <td th:text="${movie.getReleased()}">
+
+            </td>
+            <td th:text="${movie.getGenre()}">
+
+            </td>
+            <td th:text="${movie.getLanguage()}">
+
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <br>
+    <h3>Plot:</h3>
+
+    <span th:text="${movie.getPlot()}">
+    </span>
+</div>
+</body>
+</html>
